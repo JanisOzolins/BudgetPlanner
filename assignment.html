@@ -55,45 +55,64 @@
 </body>
 
 <template  name="inputForm">
-
-<form id="inputForm">
+  <!-- INCOME BUTTON -->
+  <div class="row">
   <button class="btn btn-default" id="incomeExpand">Income</button>
-  {{#if showIncome}}
-    <div class="form-group">
-    <label for="salary">Salary</label>
-    <input type="text" name="salary" id="income1">
   </div>
-  <div class="form-group">
-    <label for="passiveIncome">Passive Income</label>
-    <input type="text" name="passiveIncome" id="income2">
+  <!-- INCOME FORM-->
+  <div class="row">
+    <form id="incomeForm">
+    {{#if showIncome}}
+      <div class="form-group">
+      <label for="salary">Salary</label>
+      <input type="text" name="salary" id="income1">
+    </div>
+      <div class="form-group">
+      <label for="passiveIncome">Passive Income</label>
+      <input type="text" name="passiveIncome" id="income2">
+    </div>
+      <div class="form-group">
+      <label for="Others">Other Income</label>
+      <input type="text" name="Others" id="income3">
+    </div>
+    {{/if}}
+    </form>
   </div>
-  <div class="form-group">
-    <label for="Others">Other Income</label>
-    <input type="text" name="Others" id="income3">
+  <!-- EXPENSES BUTTON -->
+  <div class="row">
+  <button class="btn btn-default" id="expensesExpand">Expenses</button>
   </div>
-  {{/if}}
-  <div class="form-group">
-    <label for="living">Living Expenses</label>
-    <input type="text" name="living" id="living">
+  <!-- EXPENSES FORM-->
+  <div class="row">
+    <form id="expensesForm">
+    {{#if showExpenses}}
+      <div class="form-group">
+        <label for="living">Living Expenses</label>
+        <input type="text" name="living" id="living">
+      </div>
+      <div class="form-group">
+        <label for="transport">Transport</label>
+        <input type="text" name="transport" id="transport">
+      </div>
+      <div class="form-group">
+        <label for="insurance">Insurance</label>
+        <input type="text" name="insurance" id="insurance">
+      </div>
+      <div class="form-group">
+        <label for="loans">Loans/Credit Card</label>
+        <input type="text" name="loans" id="loans">
+      </div>
+      <div class="form-group">
+        <label for="leisure">Leisure</label>
+        <input type="text" name="leisure" id="leisure">
+      </div>
+    {{/if}}
+    </form>
   </div>
-  <div class="form-group">
-    <label for="transport">Transport</label>
-    <input type="text" name="transport" id="transport">
+  <!-- SAVE MY BUDGET BUTTON -->
+  <div class="row">
+    <button class="btn btn-default" id="saveBudget">Save My Budget</button>
   </div>
-  <div class="form-group">
-    <label for="insurance">Insurance</label>
-    <input type="text" name="insurance" id="insurance">
-  </div>
-  <div class="form-group">
-    <label for="loans">Loans/Credit Card</label>
-    <input type="text" name="loans" id="loans">
-  </div>
-  <div class="form-group">
-    <label for="leisure">Leisure</label>
-    <input type="text" name="leisure" id="leisure">
-  </div>
-</form>
-  <button class="btn btn-default" id="saveBudget">Save My Budget</button>
 </template>
 
 <template name="selector">

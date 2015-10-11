@@ -42,6 +42,10 @@ if (Meteor.isClient) {
   Template.inputForm.helpers({
         showIncome : function () {
           return Session.get("currentWindow") === "income" ? true : false;
+        },
+
+        showExpenses : function () {
+          return Session.get("currentWindow") === "expenses" ? true : false;
         }
   })
 
@@ -97,7 +101,24 @@ if (Meteor.isClient) {
   Template.inputForm.events({
 
     "click #incomeExpand" : function(event, template) {
+      //if income is already expanded, closes this section
+      if (Session.get("currentWindow") === "income")
+        {
+          Session.set("currentWindow", "");
+        }
+      //changes currentWindow value making the "Income" form open
       Session.set("currentWindow", "income");
+      return false;
+    },
+
+    "click #expensesExpand" : function(event, template) {
+      //if expenses are already expanded, closes this section
+      if (Session.get("currentWindow") === "expenses")
+        {
+          Session.set("currentWindow", "");
+        }
+      //changes currentWindow value making the "Expenses" form open
+      Session.set("currentWindow", "expenses");
       return false;
     },
 
@@ -171,7 +192,7 @@ if (Meteor.isClient) {
     "blur  #income" : function(event, template) {
 
 
-      
+
 
       Session.set("currentWindow", "income");
 
