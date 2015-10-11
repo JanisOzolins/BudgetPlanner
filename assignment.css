@@ -1,0 +1,47 @@
+/* CSS declarations go here */
+html {
+
+}
+body {
+background: black;
+}
+
+label {
+    display: inherit;
+    color: white;
+}
+
+h2 {
+  color: white;
+}
+
+#main{
+  padding: 25px;
+  background-color: black;
+  text-align: center;
+  border: dotted #4e4e4e 1px;
+  min-width: 240px;
+}
+
+
+#display {
+  padding: 25px;
+  background-color: black;
+  text-align: center;
+  font-size: 1.3em;
+  color: white;
+  height: 110px;
+  min-width: 240px;
+  border: dotted 1px #4E4E4E;
+  border-width: 1px 1px 0px 1px;
+}
+
+#balance {
+  color: white;
+}
+
+.btn {
+  padding: 5px;
+  margin: 10px;
+
+}

@@ -1,0 +1,125 @@
+<head>
+  <title>Plan Your Budget</title>
+</head>
+
+<body>
+  <div style="padding-top: 4%" class="container-fluid">
+    <!-- START OF NUMBER DISPLAYS -->
+    <div class="row">
+      <div class="col-sm-4">
+
+      </div>
+      <div class="col-sm-4">
+        <!-- selecting a budget interval -->
+        <div style="padding: 30px 25px 55px 25px; text-align: center" class="row">
+          <h2 style="padding-bottom:15px;">Please select a payment interval for your budget:</h2>
+          {{> selector}}
+        </div>
+        <!-- expenses -->
+        <div class="row">
+          <div id="display" class="col-sm-12">EXPENSES <br> {{expenses}}</div>
+        </div>
+        <!-- income -->
+        <div class="row">
+          <div id="display" class="col-sm-12">INCOME <br> {{income}}</div>
+        </div>
+        <!-- balance -->
+        <div class="row">
+          <div  id="display" class="col-sm-12"> BALANCE <br> <p id=balance>{{balance}}</p></div>
+        </div>
+      </div>
+      <div class="col-sm-4"></div>
+    </div>
+    <!-- END OF NUMBER DISPLAYS -->
+    <div class="row">
+      <div class="col-sm-4"></div>
+      <div class="col-sm-4">
+        <div class="row">
+          <div id="main" class="col-sm-12">
+          {{> inputForm}}
+          </div>
+        </div>
+      </div>
+      <div class="col-sm-4">
+
+
+      </div>
+      <div class="row">
+        <div style="text-align: center; padding: 25px;" class="col-sm-12">{{> graphs}}</div>
+      </div>
+    </div>
+
+
+  </div>
+
+</body>
+
+<template  name="inputForm">
+
+<form id="inputForm">
+  <button class="btn btn-default" id="incomeExpand">Income</button>
+  {{#if showIncome}}
+    <div class="form-group">
+    <label for="salary">Salary</label>
+    <input type="text" name="salary" id="income1">
+  </div>
+  <div class="form-group">
+    <label for="passiveIncome">Passive Income</label>
+    <input type="text" name="passiveIncome" id="income2">
+  </div>
+  <div class="form-group">
+    <label for="Others">Other Income</label>
+    <input type="text" name="Others" id="income3">
+  </div>
+  {{/if}}
+  <div class="form-group">
+    <label for="living">Living Expenses</label>
+    <input type="text" name="living" id="living">
+  </div>
+  <div class="form-group">
+    <label for="transport">Transport</label>
+    <input type="text" name="transport" id="transport">
+  </div>
+  <div class="form-group">
+    <label for="insurance">Insurance</label>
+    <input type="text" name="insurance" id="insurance">
+  </div>
+  <div class="form-group">
+    <label for="loans">Loans/Credit Card</label>
+    <input type="text" name="loans" id="loans">
+  </div>
+  <div class="form-group">
+    <label for="leisure">Leisure</label>
+    <input type="text" name="leisure" id="leisure">
+  </div>
+</form>
+  <button class="btn btn-default" id="saveBudget">Save My Budget</button>
+</template>
+
+<template name="selector">
+  <label class="radio-inline"><input type="radio" name="optradio" id="btnWeekly">Weekly</label>
+  <label class="radio-inline"><input type="radio" name="optradio" id="btnMonthly">Monthly</label>
+  <label class="radio-inline"><input type="radio" name="optradio" id="btnYearly">Yearly</label>
+</template>
+
+<template name="graphs">
+  <div style="width: 50%; padding: 25px;" class="container">
+    {{> highchartsHelper style="width: 33.33%" chartId="IncomeVsExpensesChart" chartObject=IncomeVsExpensesChart}}
+    <br>
+    {{> highchartsHelper style="width: 33.33%" chartId="ExpensesChart" chartObject=ExpensesChart}}
+  </div>
+</template>
+
+<template style="text-align: center;" name="temIncome">
+
+  <div style="text-align: center;" class="row">
+  <form id="temIncome">
+  <div class="form-group">
+    <label for="Salary">Income</label>
+    <input type="text" name="Salary" id="Salary">
+  </div>
+</form>
+  </div>
+</template>
+
+
